@@ -1,11 +1,17 @@
 #pragma once
 #include<cmath>
+#include<iostream>
 class Point2D
 {
 private:
 	double x_axis;
 	double y_axis;
 public:
+	Point2D(double x_axis = 0, double y_axis = 0)
+	{
+		this->x_axis = x_axis;
+		this->y_axis = y_axis;
+	}
 	double GetX() const
 	{
 		return this->x_axis;
@@ -25,5 +31,13 @@ public:
 		copy.y_axis -= other.y_axis;
 		return copy.GetVectorLength();
 	}
+	friend std::istream& operator>>(std::istream& in, Point2D& point);
 };
+
+std::istream& operator>>(std::istream& in, Point2D& point)
+{
+	in >> point.x_axis;
+	in >> point.y_axis;
+	return in;
+}
 
