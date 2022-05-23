@@ -4,9 +4,9 @@ class Shape
 {
 public:
 	//virtual void Print() const;
-	virtual void Write();
-	virtual bool Contains(Point2D const point2D) const;
-	virtual double Area() const;
+	virtual void Write() =0;
+	virtual bool Contains(Point2D const point2D) const =0;
+	virtual double Area() const =0;
 };
 
 class Circle : public Shape

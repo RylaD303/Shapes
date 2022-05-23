@@ -31,13 +31,12 @@ public:
 		copy.y_axis -= other.y_axis;
 		return copy.GetVectorLength();
 	}
-	friend std::istream& operator>>(std::istream& in, Point2D& point);
-};
+	friend std::istream& operator>>(std::istream& in, Point2D& point)
+	{
+		in >> point.x_axis;
+		in >> point.y_axis;
+		return in;
+	}
 
-std::istream& operator>>(std::istream& in, Point2D& point)
-{
-	in >> point.x_axis;
-	in >> point.y_axis;
-	return in;
-}
+};
 
